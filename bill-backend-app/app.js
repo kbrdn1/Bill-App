@@ -9,6 +9,7 @@ const port = process.env.PORT
 
 // import des routes depuis ./routes/
 const billsRoutes = require('./routes/bills.route')
+const clientsRoutes = require('./routes/clients.route')
 
 const app = express()
 
@@ -23,6 +24,7 @@ app.use(cors({
 
 // configure les routes
 app.use('/bills', billsRoutes)
+app.use('/clients', clientsRoutes)
 
 // route principale
 app.get('/', (req, res) => {
@@ -33,5 +35,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`API listening on port ${port}`)
+  console.log(`API listening on http://${hostname}:${port}`)
 })
