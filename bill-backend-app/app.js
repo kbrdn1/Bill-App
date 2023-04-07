@@ -8,7 +8,7 @@ const hostname = process.env.HOST
 const port = process.env.PORT
 
 // import des routes depuis ./routes/
-const billsRoutes = require('./routes/bills')
+const billsRoutes = require('./routes/bills.route')
 
 const app = express()
 

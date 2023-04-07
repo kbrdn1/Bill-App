@@ -5,10 +5,10 @@ const router = express.Router()
 //ça permet d'intercepter la requete 
 //pour globaliser la logique du traitement d'une requête
 // ici ce middleware sert à contrôler qu'on a bien un params :id dans les requêtes
-const verifyParams = require('../middleware/verifyParams')
+const verifyParams = require('../middlewares/verifyparams.middleware')
 
 // on importe le contrôleur des routes
-const ctrl = require('../controlllers/bills')
+const ctrl = require('../controlllers/bills.controller')
 
 // récupère la liste des bills
 router.get('/', ctrl.getItems)

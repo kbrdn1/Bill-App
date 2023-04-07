@@ -1,4 +1,4 @@
-const Bill = require('../models/Bills')
+const Bill = require('../models/bills.model')
 
 // récupérer la liste, correspond à la route GET /bills
 const getItems = (req, res)=> {
