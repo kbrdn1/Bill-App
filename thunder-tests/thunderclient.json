@@ -22,12 +22,12 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-04-07T10:17:48.292Z",
-    "modified": "2023-04-07T10:18:06.655Z",
+    "modified": "2023-04-07T10:55:14.600Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "1",
+        "value": "{{client_id}}",
         "isPath": true
       }
     ],
@@ -42,9 +42,14 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-04-07T10:18:56.275Z",
-    "modified": "2023-04-07T10:22:49.492Z",
+    "modified": "2023-04-07T10:51:46.806Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"date_added\": \"07/05/23\",\n  \"fonction\": \"Développeur Web\",\n  \"tel\": \"0367890988\",\n  \"email\": \"johndoe@email.com\",\n  \"company\": \"Web-Master\",\n  \"address\": \"2 Rue de Metz\",\n  \"address2\": \"\",\n  \"city\": \"Nancy\",\n  \"zip\": \"54000\",\n  \"country\": \"FRANCE\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -56,15 +61,20 @@
     "method": "PATCH",
     "sortNum": 50000,
     "created": "2023-04-07T10:23:54.413Z",
-    "modified": "2023-04-07T10:30:06.991Z",
+    "modified": "2023-04-07T10:56:14.739Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "1",
+        "value": "{{client_id}}",
         "isPath": true
       }
     ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"company\": \"Web-Corp\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {

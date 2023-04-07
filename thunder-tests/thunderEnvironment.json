@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "_id": "24434b7b-32b6-4aef-8a72-0f65f31c5d76",
+    "name": "bills-app",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-04-07T10:54:08.349Z",
+    "modified": "2023-04-07T10:54:08.349Z",
+    "data": [
+      {
+        "name": "client_id",
+        "value": "642ff623022cf33a0255fbcd"
+      }
+    ]
+  }
+]
