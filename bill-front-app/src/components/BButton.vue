@@ -1,14 +1,14 @@
 <template>
   <component
     :is="href ? 'a' : to ? 'router-link' : 'button'"
-    class="btn text-nowrap"
-    :class="[`btn-${variant}`, `btn-${size}`]"
+    class="px-4 py-2 font-medium flex-nowrap items-center gap-2 rounded-md transition-all cursor-pointer"
+    :class="variant"
     :to="to"
     :href="href"
   >
-    <i v-if="iconLeft" class="fa-solid me-1" :class="'fa-' + iconLeft" /><slot /><i
+    <i v-if="iconLeft" class="fa-solid mr-1" :class="'fa-' + iconLeft" /><slot /><i
       v-if="iconRight"
-      class="fa-solid ms-1"
+      class="fa-solid ml-1"
       :class="'fa-' + iconRight"
     />
   </component>
@@ -28,10 +28,6 @@ export default {
     variant: {
       type: String,
       default: 'primary'
-    },
-    size: {
-      type: String,
-      default: 'md'
     },
     href: {
       type: String,

@@ -1,9 +1,13 @@
 <template>
   <div class="home">
     <!-- titre + bouton -->
-    <div class="d-flex align-items-baseline justify-content-between border-bottom mb-4">
-      <h1 class="mb-4"><i class="fas fa-angle-down me-2" />Accueil</h1>
-      <BButton size="sm" iconLeft="circle-plus" :to="{ name: 'bill', params: { id: -1 } }">
+    <div class="flex items-baseline justify-between border-b-2 mb-4">
+      <h1 class="text-3xl font-medium mb-4"><i class="fas fa-angle-down me-2" />Accueil</h1>
+      <BButton
+        variant="bg-primary"
+        iconLeft="circle-plus"
+        :to="{ name: 'bill', params: { id: -1 } }"
+      >
         Ajouter une facture
       </BButton>
     </div>
@@ -25,7 +29,7 @@
 
     <!-- ./tableau des factures -->
 
-    <p class="text-center text-muted">
+    <p class="text-center text-gray-500">
       {{ totalBills }} facture<span v-if="totalBills > 1">s</span>
     </p>
   </div>

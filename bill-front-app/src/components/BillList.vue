@@ -1,26 +1,21 @@
 <template>
-  <table class="table my-5 table-striped table-hover">
-    <thead>
-      <slot name="head">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Date</th>
-          <th scope="col">Description</th>
-          <th scope="col">Client</th>
-          <th scope="col" class="text-end">tarif HT</th>
-          <th scope="col" class="text-end">tarif TTC</th>
-          <th scope="col" class="text-end">actions</th>
-        </tr>
-      </slot>
-    </thead>
-    <tbody>
-      <slot />
-    </tbody>
-  </table>
+  <div class="border-2 border-gray-300 rounded-lg my-5 overflow-hidden shadow-md">
+    <table class="w-full">
+      <thead>
+        <slot name="head">
+          <tr class="border-b-2 border-gray-300">
+            <th class="py-2">Date</th>
+            <th class="py-2">Description</th>
+            <th class="py-2">Client</th>
+            <th class="py-2 text-end pr-4">Tarif HT</th>
+            <th class="py-2 text-end pr-4">Tarif TTC</th>
+            <th class="py-2 text-end pr-4">Actions</th>
+          </tr>
+        </slot>
+      </thead>
+      <tbody>
+        <slot />
+      </tbody>
+    </table>
+  </div>
 </template>
-
-<script>
-export default {}
-</script>
-
-<style lang="scss" scoped></style>
