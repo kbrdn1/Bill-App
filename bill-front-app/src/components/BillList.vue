@@ -1,7 +1,7 @@
 <template>
   <div class="border-2 border-gray-300 rounded-lg my-5 overflow-hidden shadow-md">
     <table class="w-full">
-      <thead>
+      <thead class="bg-blue-500 text-white">
         <slot name="head">
           <tr class="border-b-2 border-gray-300">
             <th class="py-2">Date</th>

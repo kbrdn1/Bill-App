@@ -68,9 +68,9 @@
           </option>
         </select>
       </div>
-      <div class="border-2 border-gray-500 rounded-lg my-5 overflow-hidden">
+      <div class="border-2 border-gray-300 rounded-lg my-5 overflow-hidden">
         <table class="w-full">
-          <thead class="bg-zinc-200">
+          <thead class="bg-blue-500 text-white">
             <tr class="border-b-2 border-gray-500">
               <th class="py-2">Actions</th>
               <th class="py-2">Prestation</th>
@@ -224,7 +224,7 @@
       </div>
     </section>
 
-    <pre class="my-2 border-2 border-amber-500 rounded-lg bg-black p-2 w-fit" v-if="debug">
+    <pre class="my-2 border-2 border-amber-500 rounded-lg text-white bg-dark p-2 w-fit" v-if="debug">
       {{ bill }}
     </pre>
   </div>
