@@ -9,7 +9,7 @@
         }"
         class="text-primary text-3xl flex items-center gap-3"
       >
-        <i class="fa-solid fa-wallet" />
+        <img src="logo.png" alt="logo" class="h-10">
         <span class="font-semibold">Bills App</span>
       </RouterLink>
       <ul class="flex gap-4 items-center font-medium">
