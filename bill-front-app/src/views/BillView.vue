@@ -224,7 +224,10 @@
       </div>
     </section>
 
-    <pre class="my-2 border-2 border-amber-500 rounded-lg text-white bg-dark p-2 w-fit" v-if="debug">
+    <pre
+      class="my-2 border-2 border-amber-500 rounded-lg text-white bg-dark p-2 w-fit"
+      v-if="debug"
+    >
       {{ bill }}
     </pre>
   </div>
