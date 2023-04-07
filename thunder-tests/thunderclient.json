@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "625a8111-3cbf-4bf5-96cd-e046a6e9d465",
+    "colId": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "containerId": "",
+    "name": "getClients",
+    "url": "/clients",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-07T10:16:00.442Z",
+    "modified": "2023-04-07T10:17:10.200Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e3c79058-bdc9-4216-82a4-336651d1afee",
+    "colId": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "containerId": "",
+    "name": "getClient",
+    "url": "/clients/{id}",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-07T10:17:48.292Z",
+    "modified": "2023-04-07T10:18:06.655Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "1",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "6572938e-706e-4ac0-b2b4-286305a97c16",
+    "colId": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "containerId": "",
+    "name": "postClient",
+    "url": "/clients",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-04-07T10:18:56.275Z",
+    "modified": "2023-04-07T10:22:49.492Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c91fd9f8-6c98-4082-be3d-83562d52a4e2",
+    "colId": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "containerId": "",
+    "name": "patchClient",
+    "url": "/clients/{id}",
+    "method": "PATCH",
+    "sortNum": 50000,
+    "created": "2023-04-07T10:23:54.413Z",
+    "modified": "2023-04-07T10:30:06.991Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "1",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e8144152-494e-4370-bcdf-75c80578edaf",
+    "colId": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "containerId": "",
+    "name": "deleteClient",
+    "url": "/clients/{id}",
+    "method": "DELETE",
+    "sortNum": 60000,
+    "created": "2023-04-07T10:29:42.793Z",
+    "modified": "2023-04-07T10:29:59.168Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "1",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  }
+]

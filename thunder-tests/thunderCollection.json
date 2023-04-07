@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "a9310a80-f075-4864-82be-6fb48e0a8b91",
+    "colName": "Clients",
+    "created": "2023-04-07T10:15:29.757Z",
+    "sortNum": 10000,
+    "folders": [],
+    "settings": {
+      "options": {
+        "baseUrl": "http://127.0.0.1:3000"
+      }
+    }
+  }
+]
