@@ -1,7 +1,7 @@
 const Bill = require('../models/bills.model')
 
 // récupérer la liste, correspond à la route GET /bills
-const getItems = (req, res)=> {
+const getBills = (req, res)=> {
   // on interroge la base de donnée
   Bill.find().then((bills)=>{
     //on renvoie les résultats sous la forme de JSON
@@ -11,7 +11,7 @@ const getItems = (req, res)=> {
 }
 
 // récupérer un élément unique, correspond à la route GET /bills/:id
-const getItem = (req, res)=> {
+const getBill = (req, res)=> {
   const id = req.params.id
   // une variable qui vient du middleware précédent (verifyParams)
   console.log(req.foo)
@@ -26,7 +26,7 @@ const getItem = (req, res)=> {
 }
 
 // modifie un élément unique, correspond à la route PATCH /bills/:id
-const patchItem = (req, res)=> {
+const patchBill = (req, res)=> {
   const id = req.params.id
   const updatedBill = req.body
 
@@ -44,7 +44,7 @@ const patchItem = (req, res)=> {
 }
 
 // Crée un élément, correspond à la route POST /bills/
-const postItem = (req, res)=> {
+const postBill = (req, res)=> {
   // on fait des vérifications sur la donnée passée dans le body
   // console.log(req.body)
   const newBill = req.body
@@ -67,7 +67,7 @@ const postItem = (req, res)=> {
 }
 
 // delete un élément unique, correspond à la route DELETE /bills/:id
-const deleteItem = (req, res)=> {
+const deleteBill = (req, res)=> {
   const id = req.params.id
   Bill.deleteOne({
     _id: id
@@ -78,4 +78,10 @@ const deleteItem = (req, res)=> {
   }).catch(error => res.status(400).json({ error }))
 }
 
-module.exports = { getItems, getItem, patchItem, postItem, deleteItem }
+module.exports = { 
+  getBills,
+  getBill,
+  patchBill,
+  postBill,
+  deleteBill
+}

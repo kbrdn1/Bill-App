@@ -11,14 +11,14 @@ const verifyParams = require('../middlewares/verifyparams.middleware')
 const ctrl = require('../controlllers/bills.controller')
 
 // récupère la liste des bills
-router.get('/', ctrl.getItems)
+router.get('/', ctrl.getBills)
 // récupère une bill en fonction de son id
-router.get('/:id', verifyParams, ctrl.getItem)
+router.get('/:id', verifyParams, ctrl.getBill)
 // créer une nouvelle bill
-router.post('/', ctrl.postItem)
+router.post('/', ctrl.postBill)
 // modifie une bill en fonction de son id
-router.patch('/:id', verifyParams, ctrl.patchItem)
+router.patch('/:id', verifyParams, ctrl.patchBill)
 // supprime une bill en fonction de son id
-router.delete('/:id', verifyParams, ctrl.deleteItem)
+router.delete('/:id', verifyParams, ctrl.deleteBill)
 
 module.exports = router

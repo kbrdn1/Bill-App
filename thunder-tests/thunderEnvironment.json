@@ -10,6 +10,10 @@
       {
         "name": "client_id",
         "value": "642ff623022cf33a0255fbcd"
+      },
+      {
+        "name": "bill_id",
+        "value": "642ffa7d9c284bef663d8628"
       }
     ]
   }

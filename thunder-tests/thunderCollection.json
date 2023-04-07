@@ -10,5 +10,17 @@
         "baseUrl": "http://127.0.0.1:3000"
       }
     }
+  },
+  {
+    "_id": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "colName": "Bills",
+    "created": "2023-04-07T11:04:54.085Z",
+    "sortNum": 20000,
+    "folders": [],
+    "settings": {
+      "options": {
+        "baseUrl": "http://127.0.0.1:3000"
+      }
+    }
   }
 ]

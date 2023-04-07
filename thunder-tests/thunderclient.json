@@ -96,5 +96,103 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "015670cc-e029-4647-a8d1-cefed7ede044",
+    "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "containerId": "",
+    "name": "getBills",
+    "url": "/bills",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-07T11:07:09.158Z",
+    "modified": "2023-04-07T11:07:16.420Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a9538f2d-92ce-46e6-8fd9-81102fc5f65d",
+    "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "containerId": "",
+    "name": "getBill",
+    "url": "/bills/{id}",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-07T11:07:55.561Z",
+    "modified": "2023-04-07T11:08:19.920Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "{{bill_id}}",
+        "isPath": true
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "5d3d0a6d-6d70-493a-b8c1-eb0ba34b8c61",
+    "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "containerId": "",
+    "name": "postBill",
+    "url": "/bills",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-04-07T11:08:34.602Z",
+    "modified": "2023-04-07T11:11:57.506Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"billnum\": 2,\n  \"date\": \"07/04/2023\",\n  \"description\": \"Facture de test 2\",\n  \"client\": {\n    \"idclient\": 2,\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\"\n  },\n  \"prestations\": [\n    {\n      \"description\": \"Test description\",\n      \"qty\": 5,\n      \"price\": 350\n    },\n    {\n      \"description\": \"Je suis une prestation\",\n      \"qty\": 2,\n      \"price\": 950\n    }\n  ],\n  \"discount\": 0,\n  \"paid\": 0,\n  \"totalHT\": 2700,\n  \"tva\": 20,\n  \"totalTTC\": 3260\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bd9793bd-5219-4fe5-b719-08922d9349d5",
+    "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "containerId": "",
+    "name": "patchBill",
+    "url": "/bills/{id}",
+    "method": "PATCH",
+    "sortNum": 40000,
+    "created": "2023-04-07T11:13:22.212Z",
+    "modified": "2023-04-07T11:14:29.813Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "{{bill_id}}",
+        "isPath": true
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"date\": \"06/04/2023\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ad9ed1be-24e1-478e-b422-c4a9ef842188",
+    "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
+    "containerId": "",
+    "name": "deleteBill",
+    "url": "/bills/{id}",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2023-04-07T11:15:27.854Z",
+    "modified": "2023-04-07T11:15:57.710Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "1",
+        "isPath": true
+      }
+    ],
+    "tests": []
   }
 ]
