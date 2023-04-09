@@ -136,16 +136,22 @@
     "colId": "08df41e1-925d-4067-83d9-3ca8f8fa3651",
     "containerId": "",
     "name": "postBill",
-    "url": "/bills",
+    "url": "/bills?client_id={{client_id}}",
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-04-07T11:08:34.602Z",
-    "modified": "2023-04-07T11:11:57.506Z",
+    "modified": "2023-04-09T13:35:49.445Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "client_id",
+        "value": "{{client_id}}",
+        "isPath": false
+      }
+    ],
     "body": {
       "type": "json",
-      "raw": "{\n  \"billnum\": 2,\n  \"date\": \"07/04/2023\",\n  \"description\": \"Facture de test 2\",\n  \"client\": {\n    \"idclient\": 2,\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\"\n  },\n  \"prestations\": [\n    {\n      \"description\": \"Test description\",\n      \"qty\": 5,\n      \"price\": 350\n    },\n    {\n      \"description\": \"Je suis une prestation\",\n      \"qty\": 2,\n      \"price\": 950\n    }\n  ],\n  \"discount\": 0,\n  \"paid\": 0,\n  \"totalHT\": 2700,\n  \"tva\": 20,\n  \"totalTTC\": 3260\n}",
+      "raw": "{\n  \"billnum\": 2000,\n  \"date\": \"07/04/2023\",\n  \"description\": \"Facture de test 2000\",\n  \"prestations\": [\n    {\n      \"description\": \"Test description !!\",\n      \"qty\": 5,\n      \"price\": 350\n    },\n    {\n      \"description\": \"Je suis une prestation de malade\",\n      \"qty\": 2,\n      \"price\": 950\n    }\n  ],\n  \"discount\": 0,\n  \"paid\": 0,\n  \"totalHT\": 2700,\n  \"tva\": 20,\n  \"totalTTC\": 3260\n}",
       "form": []
     },
     "tests": []
@@ -159,7 +165,7 @@
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2023-04-07T11:13:22.212Z",
-    "modified": "2023-04-07T11:14:29.813Z",
+    "modified": "2023-04-09T13:49:22.732Z",
     "headers": [],
     "params": [
       {
@@ -170,7 +176,7 @@
     ],
     "body": {
       "type": "json",
-      "raw": "{\n  \"date\": \"06/04/2023\"\n}",
+      "raw": "{\n  \"date\": \"06/04/2023\",\n  \"client\": \"642ff623022cf33a0255fbcd\"\n}",
       "form": []
     },
     "tests": []
@@ -184,12 +190,12 @@
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2023-04-07T11:15:27.854Z",
-    "modified": "2023-04-07T11:15:57.710Z",
+    "modified": "2023-04-09T13:53:17.576Z",
     "headers": [],
     "params": [
       {
         "name": "id",
-        "value": "1",
+        "value": "64306aec8a67ddcc48901412",
         "isPath": true
       }
     ],

@@ -1,4 +1,5 @@
 const Bill = require('../models/bills.model')
+const Client = require('../models/clients.model')
 
 // récupérer la liste, correspond à la route GET /bills
 const getBills = (req, res)=> {
@@ -26,11 +27,18 @@ const getBill = (req, res)=> {
 }
 
 // modifie un élément unique, correspond à la route PATCH /bills/:id
-const patchBill = (req, res)=> {
+const patchBill = async (req, res)=> {
   const id = req.params.id
   const updatedBill = req.body
 
-  console.log(req.body)
+  if (req.body.client) {
+    const client = await Client.findOne({ _id: req.body.client }).then((client) => {
+      return client
+    }).catch(error => res.status(400).json({ error }))
+
+    updatedBill.client = client
+  }
+
   // trouve une facture et patch 
   Bill.updateOne({
     _id: id
@@ -44,13 +52,15 @@ const patchBill = (req, res)=> {
 }
 
 // Crée un élément, correspond à la route POST /bills/
-const postBill = (req, res)=> {
+const postBill = async (req, res)=> {
   // on fait des vérifications sur la donnée passée dans le body
   // console.log(req.body)
   const newBill = req.body
 
+  const clientId = req.query.client_id
+
   // on check les valeurs requises dans notre modèle
-  if(!newBill.billnum || !newBill.date || !newBill.client) {
+  if(!newBill.billnum || !newBill.date || !clientId) {
     // si il y a une erreur, on interrompt l'opération
     // retour une erreur
     return res.status(400).json({error: 'Les paramètres date, billnum et client sont requis.'})
@@ -58,7 +68,12 @@ const postBill = (req, res)=> {
   //si la valdation est passée
   // on crée une nouvelle instance de Bill avec en paramètre
   // les données qui viennent de la requête req.body
-  const bill = new Bill({ ...newBill })
+  const client = await Client.findOne({ _id: clientId }).then((client) => {
+    return client
+  }).catch(error => res.status(400).json({ error }))
+
+  const bill = new Bill({ ...newBill, client: client })
+
   bill.save().then(()=> {
     // le statut code 201 indique que la ressource a bien été créée
     res.status(201).json(bill)
