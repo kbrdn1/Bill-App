@@ -5,7 +5,7 @@
       <BButton
         variant="bg-primary"
         iconLeft="circle-plus"
-        :to="{ name: 'createClient', params: { id: -1 } }"
+        :to="{ name: 'editClient', params: { id: -1 } }"
       >
         Ajouter un client
       </BButton>
@@ -13,18 +13,17 @@
     <!-- ./titre + bouton -->
 
     <p v-if="!clients || !clients.length" class="text-primary my-5">Aucun client pour l'instant.</p>
-  <ClientList v-else>
-    <ClientListItem
-      v-for="client in clients"
-      :key="client.id"
-      :client="client"
-      message="test"
-      @delete="deleteClient($event)"
-      @edit="editClient($event)"
-    />
-  </ClientList>
-    </div>
-
+    <ClientList v-else>
+      <ClientListItem
+        v-for="client in clients"
+        :key="client.id"
+        :client="client"
+        message="test"
+        @delete="deleteClient($event)"
+        @edit="editClient($event)"
+      />
+    </ClientList>
+  </div>
 </template>
 
 <script>
@@ -45,7 +44,10 @@ export default {
     this.getAllClients()
   },
   methods: {
-    ...mapActions(useClientStore, ['deleteClient', 'getAllClients'])
+    ...mapActions(useClientStore, ['deleteClient', 'getAllClients']),
+    editClient(id) {
+      this.$router.push({ name: 'editClient', params: { id } })
+    }
   }
 }
 </script>

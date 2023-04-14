@@ -54,17 +54,13 @@
         <label for="client" class="font-semibold text-lg">Client :</label>
         <select
           class="p-2 rounded-md border-2 border-zinc-300"
-          :arialabel="bill.client.firstName + ' ' + bill.client.lastName"
-          v-model="bill.client"
+          :arialabel="bill.client._id + ' ' + bill.client._id"
+          v-model="bill.client._id"
           id="client"
         >
           <option class="">Choisir</option>
-          <option
-            v-for="option in clientOptions"
-            :key="option.value.idclient"
-            :value="option.value.idclient"
-          >
-            {{ option.label }}
+          <option v-for="client in clients" :key="client._id" :value="client._id">
+            {{ client.firstName + ' ' + client.lastName }}
           </option>
         </select>
       </div>
@@ -229,16 +225,17 @@
       v-if="debug"
     >
       {{ bill }}
+      {{ clients }}
     </pre>
   </div>
 </template>
 
 <script>
-import { clientOptions } from '../libs/clientOptions.js'
-import prestationInterface from '../interfaces/prestationInterface.js'
+import prestationInterface from '@/interfaces/prestationInterface.js'
 
 import { mapState, mapActions } from 'pinia'
-import { useBillStore } from '../stores/bill.js'
+import { useBillStore } from '@/stores/bill.js'
+import { useClientStore } from '@/stores/client.js'
 
 export default {
   props: {
@@ -249,13 +246,13 @@ export default {
   },
   data() {
     return {
-      debug: false,
-      clientOptions
+      debug: false
     }
   },
   computed: {
     // on connecte le state de bill avec mapWritableState
     ...mapState(useBillStore, ['bill']),
+    ...mapState(useClientStore, ['clients']),
 
     // est-ce une nouvelle facture ? ou est-on en train de modifier une facture enregistrée ?
     isNewBill() {
@@ -297,10 +294,14 @@ export default {
       // soit je remplis le formulaire avec les données d'une facture existante (venant du store)
       await this.getBill(this.id)
     }
+    // on récupère la liste des clients
+    await this.getAllClients()
   },
   methods: {
     // on importe les méthodes du store bill
     ...mapActions(useBillStore, ['createBill', 'getBill', 'saveBill', 'deleteBill']),
+    // on importe les méthodes du store client
+    ...mapActions(useClientStore, ['getAllClients']),
 
     // pousse une nouvelle prestation dans le tableau bill.prestations
     onAddPrestation() {
