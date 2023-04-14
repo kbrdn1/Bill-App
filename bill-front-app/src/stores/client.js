@@ -1,64 +1,64 @@
 import { defineStore } from 'pinia'
-import billInterface from '../interfaces/billInterface.js'
+import clientInterface from '../interfaces/billInterface.js'
 import cloneDeep from 'lodash.clonedeep'
 import axios from 'axios'
-const useBillStore = defineStore('bill', {
+const useClientStore = defineStore('client', {
   state: () => ({
-    bill: null,
-    bills: []
+    client: null,
+    clients: []
   }),
   getters: {
-    totalBills: (state) => state.bills.length
+    totalClients: (state) => state.clients.length
   },
   actions: {
     // éditer une facture existante à partir de son id
-    async getAllBills() {
+    async getAllClients() {
       try {
-        // requête à l'API GET /bills
-        const response = await axios.get('/bills')
+        // requête à l'API GET /clients
+        const response = await axios.get('/clients')
         console.log(response.data)
-        this.$patch({ bills: cloneDeep(response.data) })
+        this.$patch({ clients: cloneDeep(response.data) })
       } catch (error) {
         console.log(error)
       }
     },
 
     // créer une nouvelle facture
-    createBill() {
-      console.log("Création d'une nouvelle facture")
+    createClient() {
+      console.log("Création d'un nouveau client")
       // dès que vous essayer de remplacer un objet ou un tableau dans le state, vous devez utiliser $patch
-      // on place une nouvelle facture dans le store.bill (pour le formulaire)
-      delete this.bill._id
-      this.$patch({ bill: cloneDeep(billInterface) })
+      // on place une nouvelle facture dans le store.client (pour le formulaire)
+      delete this.client._id
+      this.$patch({ client: cloneDeep(clientInterface) })
     },
 
     // éditer une facture existante à partir de son id
-    async getBill(id) {
+    async getClient(id) {
       try {
         // requête à l'API GET /bills
-        const response = await axios.get(`/bills/${id}`)
+        const response = await axios.get(`/clients/${id}`)
         console.log(response.data)
         // raffraichit la liste après suppression
-        this.$patch({ bill: cloneDeep(response.data) })
+        this.$patch({ client: cloneDeep(response.data) })
       } catch (error) {
         console.log(error)
       }
     },
 
     // enregistre les modifications d'une facture (nouvelle/en édition)
-    async saveBill(bill, clientId) {
-      if (bill._id) {
+    async saveClient(client) {
+      if (client._id) {
         try {
-          const response = await axios.patch(`/bills/${bill._id}`, bill)
+          const response = await axios.patch(`/clients/${client._id}`, client)
           console.log('patch response ', response.data)
           this.$reset()
         } catch (error) {
           console.log(error)
         }
       } else {
-        console.log("création d'une nouvelle facture")
+        console.log("création d'un nouveau client")
         try {
-          const response = await axios.post(`/bills?client_id=${clientId}`, bill)
+          const response = await axios.post(`/clients`, client)
           console.log('post response ', response.data)
           this.$reset()
         } catch (error) {
@@ -68,13 +68,13 @@ const useBillStore = defineStore('bill', {
     },
 
     // méthode pour supprimer une facture du tableau bills
-    async deleteBill(id) {
+    async deleteClient(id) {
       try {
         // requête à l'API GET /bills
-        const response = await axios.delete(`/bills/${id}`)
+        const response = await axios.delete(`/clients/${id}`)
         console.log('delete response ', response.data)
         // raffraichit la liste après suppression
-        this.getAllBills()
+        this.getAllClients()
       } catch (error) {
         console.log(error)
       }
@@ -82,4 +82,4 @@ const useBillStore = defineStore('bill', {
   }
 })
 
-export { useBillStore }
+export { useClientStore }

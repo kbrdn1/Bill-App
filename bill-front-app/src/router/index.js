@@ -21,6 +21,18 @@ const router = createRouter({
       props: true, //remvoie le paramètre en tant que props
       component: () => import('../views/BillView.vue')
     },
+    {
+      path: '/client',
+      name: 'client',
+      props: true,
+      component: () => import('../views/ClientView.vue')
+    },
+    {
+      path: '/client/:id',
+      name: 'createClient',
+      props: true,
+      component: () => import('../views/Clients.vue')
+    },
     // Nous ajoutons ici une route avec une expression régulière pour gérer les erreurs de navigation
     // ATTTENTION À BIEN METTRE CETTE ROUTE EN DERNIER DANS LE TABLEAU DU ROUTER
     {

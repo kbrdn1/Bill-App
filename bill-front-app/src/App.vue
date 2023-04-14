@@ -33,6 +33,16 @@
           <RouterLink
             exact-active-class="bg-primary text-dark font-semibold"
             active-class="bg-primary text-dark font-semibold"
+            to="/client"
+            class="px-4 py-2 rounded-md transition-all"
+          >
+            <i class="fa-solid fa-user mr-1" /> Client
+          </RouterLink>
+        </li>
+        <li class="hover:text-primary transition-all">
+          <RouterLink
+            exact-active-class="bg-primary text-dark font-semibold"
+            active-class="bg-primary text-dark font-semibold"
             to="/about"
             class="px-4 py-2 rounded-md transition-all"
           >

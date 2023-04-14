@@ -62,7 +62,7 @@
           <option
             v-for="option in clientOptions"
             :key="option.value.idclient"
-            :value="option.value"
+            :value="option.value.idclient"
           >
             {{ option.label }}
           </option>
