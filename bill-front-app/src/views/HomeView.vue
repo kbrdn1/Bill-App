@@ -2,7 +2,7 @@
   <div class="home">
     <!-- titre + bouton -->
     <div class="flex items-baseline justify-between border-b-2 mb-4">
-      <h1 class="text-3xl font-medium mb-4"><i class="fas fa-angle-down me-2" />Accueil</h1>
+      <h1 class="text-3xl font-medium mb-4"><i class="fas fa-angle-down me-2" />Factures</h1>
       <BButton
         variant="bg-primary"
         iconLeft="circle-plus"
