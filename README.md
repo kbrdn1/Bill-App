@@ -13,6 +13,7 @@ A Bills application to learn Vue3 and NodeJS
 - Vue3
 - Vite
 - TailwindCSS
+- FontAwesome
 
 ## Project setup
 ### Backend:
